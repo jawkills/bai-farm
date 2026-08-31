@@ -1,0 +1,4 @@
+camoufox[geoip]>=0.5.5
+playwright>=1.60.0
+curl_cffi>=0.16.0
+eth_account>=0.13.0

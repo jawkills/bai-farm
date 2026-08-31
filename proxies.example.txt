@@ -1,0 +1,14 @@
+# BAI FARM — proxy list example
+# Copy this file to proxies.txt (gitignored) and fill with your own proxies.
+#
+# Registration on chat.b.ai is rate-limited PER IP: after a few registrations an IP
+# starts rejecting logins with error=Configuration. Rotate fresh residential IPs —
+# datacenter proxies have bad reputation and get interactive challenges + rejections.
+#
+# All three formats work (one proxy per line):
+host:port
+host:port:user:pass
+http://user:pass@host:port
+#
+# Recommended: Webshare residential (10 free proxies to start), IPRoyal, Bright Data.
+# Budget ~2-4 MB bandwidth per registration. Keep 1-3 registrations per IP, then rotate.
