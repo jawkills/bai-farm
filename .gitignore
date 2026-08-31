@@ -1,0 +1,53 @@
+# ===== SENSITIVE DATA — NEVER COMMIT =====
+# Runtime outputs (private keys, API keys, sessions, JWT, cookies)
+data/
+bai_accounts.json
+bai_proxy_accounts.json
+bai_sessions/
+mock_session_cookies.json
+session_success.json
+captured_*.json
+debug_fail.json
+diag_token.txt
+
+# Proxy credentials (Webshare user:pass)
+proxies.txt
+proxies_url.txt
+proxies_one.txt
+proxies_alive.txt
+proxies_dead.txt
+proxies.example.txt.genuine
+!proxies.example.txt
+
+# Logs (may contain tokens)
+*.log
+logs/
+dbg/
+debug/
+debug_fail/
+
+# Research archive (large, messy, contains captured payloads)
+recon/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.pytest_cache/
+
+# OS / editor
+Thumbs.db
+.DS_Store
+desktop.ini
+.idea/
+.vscode/
+*.swp
+
+# Env
+.env
+.env.local
+
+# Hermes workspace
+.hermes/
