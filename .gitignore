@@ -35,6 +35,8 @@ __pycache__/
 *.pyo
 .venv/
 venv/
+.camoufox/
+.camoufox*
 .pytest_cache/
 
 # OS / editor

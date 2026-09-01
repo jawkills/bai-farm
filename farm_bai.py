@@ -36,6 +36,15 @@ IMPORTANT:
     original widget rendered inside the app page. See docs/RESEARCH.md.
 """
 import json, time, random, string, sys, os, multiprocessing as mp
+# Separate Camoufox runtime from other tools (Boterdrop solver) that share the
+# default cache and wipe each other on start (0.4.x vs 0.5.x layout conflict).
+# Patch platformdirs BEFORE camoufox import so it resolves our private dir.
+import platformdirs as _pdirs
+
+_pdirs.user_cache_dir = (
+    lambda appname, *a, **k: os.path.join(os.path.dirname(os.path.abspath(__file__)), ".camoufox")
+)
+
 from eth_account import Account
 from eth_account.messages import encode_defunct
 from curl_cffi import requests as cffi
@@ -236,7 +245,7 @@ def farm_one(wid, idx, proxy=None):
         page.expose_function("__pySign", py_sign)
         page.add_init_script(RELAY_JS)
 
-        page.goto("https://chat.b.ai/chat", timeout=90000, wait_until="domcontentloaded")
+        page.goto("https://chat.b.ai/chat", timeout=180000, wait_until="domcontentloaded")
         page.wait_for_selector("text=Log in", timeout=30000)
         inject(page, PYCALL_JS)
         inject(page, mock_js)
